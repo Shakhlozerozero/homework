@@ -12,6 +12,7 @@
 body {
   display: flex;
   flex-direction: column;
+  min-width: 375px;
   min-height: 100vh;
 }
 
@@ -28,6 +29,12 @@ p   {
 a {
   text-decoration: none;
 }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 
 a,
 button {
@@ -70,6 +77,7 @@ button.button:disabled {
 
 .section {
   margin-bottom: 140px;
+  
 }
 
 .title-large {
@@ -92,6 +100,16 @@ button.button:disabled {
   color: #2c332f;
 }
 
+.decor::before {
+     content: "";
+    position: absolute;
+     z-index: -1;
+     width: calc(50% - 250px);
+     height: 48px;
+     background: url("../photo/декор.svg") repeat-x;
+}
+
+
 .text-sub {
     font: 300 14px "Ubuntu", sans-serif;
     letter-spacing: 0.04em;
@@ -106,3 +124,44 @@ summary:focus-visible {
   outline-offset: 1px;
 }
 
+@media (width <= 992px) {
+   .container {
+    max-width: 768px;
+   }
+
+}
+
+
+@media (width <= 768px) {
+  .container {
+    max-width: 576px;
+  }
+
+  .title-large {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  .home-page   .title-large {
+    max-width: inherit;
+    text-align: center;
+  }
+
+  .title-medium {
+    font-size: 22px;
+  }
+}
+
+@media (width <= 576px)  {
+  .section {
+    margin-bottom: 80px;
+  }
+
+  .title-large {
+    font-size: 34px;
+  }
+
+  .title-medium {
+    font-size: 18px;
+  }
+}
